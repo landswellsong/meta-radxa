@@ -15,7 +15,7 @@ S = "${WORKDIR}"
 
 inherit systemd
 
-RDEPENDS_${PN} += "bluez5 usbutils"
+RDEPENDS:${PN} += "bluez5 usbutils"
 
 do_install() {
 	install -d ${D}${sysconfdir}
@@ -23,4 +23,4 @@ do_install() {
 	install -m 0644 ${WORKDIR}/${MACHINE}/blacklist-bt.conf ${D}${sysconfdir}/modprobe.d/blacklist-bt.conf
 }
 
-FILES_${PN} += "/etc/modprobe.d/blacklist-bt.conf"
+FILES:${PN} += "/etc/modprobe.d/blacklist-bt.conf"

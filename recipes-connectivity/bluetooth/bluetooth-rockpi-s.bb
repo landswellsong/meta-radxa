@@ -18,7 +18,7 @@ S = "${WORKDIR}"
 
 inherit systemd
 
-RDEPENDS_${PN} += "bluez5"
+RDEPENDS:${PN} += "bluez5"
 
 do_install() {
 	install -d ${D}${systemd_system_unitdir}
@@ -28,4 +28,4 @@ do_install() {
 	install -m 0755 ${WORKDIR}/${MACHINE}/install_module_hci_uart ${D}${bindir}/install_module_hci_uart
 }
 
-SYSTEMD_SERVICE_${PN} = "install-module-hci-uart.service rtl8723ds-btfw-load.service"
+SYSTEMD_SERVICE:${PN} = "install-module-hci-uart.service rtl8723ds-btfw-load.service"

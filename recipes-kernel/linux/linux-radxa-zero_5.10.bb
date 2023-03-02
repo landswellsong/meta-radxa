@@ -25,19 +25,19 @@ KCONFIG_MODE = "--alldefconfig"
 # We need mkimage for the overlays
 DEPENDS += "u-boot-mkimage-radxa-native"
 
-do_compile_append() {
+do_compile:append() {
 	oe_runmake dtbs
 }
 
-do_install_append() {
+do_install:append() {
 	install -d ${D}/boot/overlays
 	install -m 644 ${B}/arch/arm64/boot/dts/amlogic/overlay/* ${D}/boot/overlays
 }
 
-do_deploy_append() {
+do_deploy:append() {
 	install -d ${DEPLOYDIR}/overlays
 	install -m 644 ${B}/arch/arm64/boot/dts/amlogic/overlay/* ${DEPLOYDIR}/overlays
 }
 
 PACKAGES += "${PN}-overlays"
-FILES_${PN}-overlays = "/boot/overlays/*"
+FILES:${PN}-overlays = "/boot/overlays/*"

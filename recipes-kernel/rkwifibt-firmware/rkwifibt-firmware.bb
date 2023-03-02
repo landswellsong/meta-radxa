@@ -61,76 +61,76 @@ PACKAGES =+ " \
 	${PN}-rtl8821cu-bt \
 "
 
-FILES_${PN}-ap6212a1-wifi = " \
+FILES:${PN}-ap6212a1-wifi = " \
 	lib/firmware/brcm/brcmfmac43430-sdio* \
 "
 
-FILES_${PN}-ap6212a1-bt = " \
+FILES:${PN}-ap6212a1-bt = " \
 	lib/firmware/brcm/bcm43438a1.hcd \
 "
 
-FILES_${PN}-ap6236-wifi = " \
+FILES:${PN}-ap6236-wifi = " \
 	lib/firmware/brcm/fw_bcm43436b0.bin \
 	lib/firmware/brcm/nvram_ap6236.txt \
 "
 
-FILES_${PN}-ap6236-bt = " \
+FILES:${PN}-ap6236-bt = " \
 	lib/firmware/brcm/BCM4343B0.hcd \
 "
 
-FILES_${PN}-ap6255-wifi = " \
+FILES:${PN}-ap6255-wifi = " \
 	lib/firmware/brcm/fw_bcm43455c0_ag.bin \
 	lib/firmware/brcm/fw_bcm43455c0_ag_p2p.bin \
 	lib/firmware/brcm/nvram_ap6255.txt \
 "
 
-FILES_${PN}-ap6255-bt = " \
+FILES:${PN}-ap6255-bt = " \
 	lib/firmware/brcm/BCM4345C0.hcd \
 "
 
-FILES_${PN}-ap6256-wifi = " \
+FILES:${PN}-ap6256-wifi = " \
 	lib/firmware/brcm/brcmfmac43456-sdio* \
 "
 
-FILES_${PN}-ap6256-bt = " \
+FILES:${PN}-ap6256-bt = " \
 	lib/firmware/brcm/BCM4345C5.hcd \
 "
 
-FILES_${PN}-ap6356-wifi = " \
+FILES:${PN}-ap6356-wifi = " \
 	lib/firmware/brcm/fw_bcm4356a2_ag.bin \
 	lib/firmware/brcm/nvram_ap6356.txt \
 "
 
-FILES_${PN}-ap6356-bt = " \
+FILES:${PN}-ap6356-bt = " \
 	lib/firmware/brcm/BCM4356A2.hcd \
 "
 
-FILES_${PN}-ap6398s-wifi = " \
+FILES:${PN}-ap6398s-wifi = " \
 	lib/firmware/brcm/fw_bcm4359c0_ag.bin \
 	lib/firmware/brcm/fw_bcm4359c0_ag_p2p.bin \
 	lib/firmware/brcm/nvram_ap6398s.txt \
 "
 
-FILES_${PN}-ap6398s-bt = " \
+FILES:${PN}-ap6398s-bt = " \
 	lib/firmware/brcm/BCM4359C0.hcd \
 "
 
-FILES_${PN}-rtl8723ds-bt = " \
+FILES:${PN}-rtl8723ds-bt = " \
 	${base_libdir}/firmware/rtlbt/rtl8723d_config \
 	${base_libdir}/firmware/rtlbt/rtl8723d_fw \
 "
 
-FILES_${PN}-rtl8723du-bt = " \
+FILES:${PN}-rtl8723du-bt = " \
 	${base_libdir}/firmware/rtl8723du_config \
 	${base_libdir}/firmware/rtl8723du_fw \
 "
 
-FILES_${PN}-rtl8821cu-bt = " \
+FILES:${PN}-rtl8821cu-bt = " \
 	${base_libdir}/firmware/rtl8821cu_config \
 	${base_libdir}/firmware/rtl8821cu_fw \
 "
 
-FILES_${PN} = "*"
+FILES:${PN} = "*"
 
 # Make it depend on all of the split-out packages.
 python () {
@@ -139,4 +139,4 @@ python () {
     d.appendVar('RDEPENDS_' + pn, ' ' + ' '.join(firmware_pkgs))
 }
 
-INSANE_SKIP_${PN} += "arch"
+INSANE_SKIP:${PN} += "arch"

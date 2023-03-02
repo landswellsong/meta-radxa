@@ -107,10 +107,10 @@ Fetch the source using the commands given below:
 
 ```
 MACHINE ?= "xxxx"
-DISTRO_FEATURES_append = " pam systemd x11"
-VIRTUAL-RUNTIME_init_manager = "systemd"
-PACKAGECONFIG_append_pn-systemd = " resolved networkd"
-DISTRO_FEATURES_remove = "wayland"
+DISTRO_FEATURES:append = " pam systemd x11"
+VIRTUAL-RUNTIME:init_manager = "systemd"
+PACKAGECONFIG:append:pn-systemd = " resolved networkd"
+DISTRO_FEATURES:remove = "wayland"
 ```
 
 **Replace xxxx with the machine you want to build the image for. All supported machines can be found in meta-radxa/conf/machine.**

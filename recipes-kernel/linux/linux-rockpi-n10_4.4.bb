@@ -24,11 +24,11 @@ PV = "${LINUX_VERSION}"
 # Include only supported boards for now
 COMPATIBLE_MACHINE = "(rk3036|rk3066|rk3288|rk3328|rk3399|rk3308|rk3399pro)"
 
-do_compile_append() {
+do_compile:append() {
 	oe_runmake dtbs
 }
 
-do_deploy_append() {
+do_deploy:append() {
 	install -d ${DEPLOYDIR}/overlays
 	install -m 644 ${WORKDIR}/linux-rockpi_n10_rk3399pro-standard-build/arch/arm64/boot/dts/rockchip/overlay/* ${DEPLOYDIR}/overlays
 }

@@ -100,10 +100,10 @@ BB_DISKMON_DIRS ??= "\
 # this doesn't mean anything to you.
 CONF_VERSION = "1"
 
-DISTRO_FEATURES_append = " pam systemd x11"
-VIRTUAL-RUNTIME_init_manager = "systemd"
-PACKAGECONFIG_append_pn-systemd = " resolved networkd"
-DISTRO_FEATURES_remove = "wayland"
+DISTRO_FEATURES:append = " pam systemd x11"
+VIRTUAL-RUNTIME:init_manager = "systemd"
+PACKAGECONFIG:append:pn-systemd = " resolved networkd"
+DISTRO_FEATURES:remove = "wayland"
 
 # Uncomment the following line to add the extra packages
-#IMAGE_INSTALL_append = " create-ap"
+#IMAGE_INSTALL:append = " create-ap"

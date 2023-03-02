@@ -1,4 +1,4 @@
-inherit native deploy
+inherit deploy native
 
 DESCRIPTION = "Rockchip-Radxa binary tools"
 

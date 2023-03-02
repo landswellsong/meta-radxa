@@ -16,7 +16,7 @@ SRCREV = "ac1f2bda54cf69e35a4abadae3b1819674936573"
 
 S = "${WORKDIR}/git/v5.4.18-backports"
 
-do_compile_prepend() {
+do_compile:prepend() {
     export LEX=flex
     CC=${BUILD_CC} oe_runmake defconfig-brcmfmac
 }

@@ -28,18 +28,18 @@ PV = "${LINUX_VERSION}"
 COMPATIBLE_MACHINE = "(rk3568)"
 deltask kernel_configme
 # Make sure we use /usr/bin/env ${PYTHON_PN} for scripts
-do_patch_append() {
+do_patch:append() {
 	for s in `grep -rIl python ${S}/scripts`; do
 		sed -i -e '1s|^#!.*python[23]*|#!/usr/bin/env ${PYTHON_PN}|' $s
 	done
 }
 
-do_compile_append() {
+do_compile:append() {
 	oe_runmake dtbs
 }
-do_deploy_append() {
+do_deploy:append() {
 	install -d ${DEPLOYDIR}/overlays
 	install -m 644 ${WORKDIR}/linux-rock_3a_rk3568-standard-build/arch/arm64/boot/dts/rockchip/overlay/* ${DEPLOYDIR}/overlays
 }
 PACKAGES += "${PN}-overlays"
-FILES_${PN}-overlays = "/boot/overlays/*"
+FILES:${PN}-overlays = "/boot/overlays/*"

@@ -20,7 +20,7 @@ inherit cmake distutils3-base
 
 DEPENDS += "json-c"
 
-EXTRA_OECMAKE_append = " -DINSTALLTOOLS:BOOL=ON -DFIRMATA=ON -DCMAKE_SKIP_RPATH=ON \
+EXTRA_OECMAKE:append = " -DINSTALLTOOLS:BOOL=ON -DFIRMATA=ON -DCMAKE_SKIP_RPATH=ON \
                          -DPYTHON3_PACKAGES_PATH:PATH=${baselib}/python${PYTHON_BASEVERSION}/site-packages \
 			 -DBUILDSWIGNODE=OFF \
                        "
@@ -28,14 +28,14 @@ EXTRA_OECMAKE_append = " -DINSTALLTOOLS:BOOL=ON -DFIRMATA=ON -DCMAKE_SKIP_RPATH=
 # Prepend mraa-utils to make sure bindir ends up in there
 PACKAGES =+ "${PN}-utils"
 
-FILES_${PN}-doc += "${datadir}/mraa/examples/"
+FILES:${PN}-doc += "${datadir}/mraa/examples/"
 
-FILES_${PN}-utils = "${bindir}/"
+FILES:${PN}-utils = "${bindir}/"
 
 PACKAGECONFIG ??= "python"
 
 PACKAGECONFIG[python] = "-DBUILDSWIGPYTHON=ON, -DBUILDSWIGPYTHON=OFF, swig-native ${PYTHON_PN},"
 PACKAGECONFIG[ft4222] = "-DUSBPLAT=ON -DFTDI4222=ON, -DUSBPLAT=OFF -DFTDI4222=OFF,, libft4222"
 
-FILES_${PYTHON_PN}-${PN} = "${PYTHON_SITEPACKAGES_DIR}/"
-RDEPENDS_${PYTHON_PN}-${PN} += "${PYTHON_PN}"
+FILES:${PYTHON_PN}-${PN} = "${PYTHON_SITEPACKAGES_DIR}/"
+RDEPENDS:${PYTHON_PN}-${PN} += "${PYTHON_PN}"

@@ -7,7 +7,7 @@ IMG_ROOTFS_TYPE = "ext4"
 IMG_ROOTFS = "${IMGDEPLOYDIR}/${IMAGE_BASENAME}-${MACHINE}.${IMG_ROOTFS_TYPE}"
 
 # This image depends on the rootfs image
-IMAGE_TYPEDEP_rockchip-radxa-gpt-img = "${IMG_ROOTFS_TYPE}"
+IMAGE_TYPEDEP:rockchip-radxa-gpt-img = "${IMG_ROOTFS_TYPE}"
 
 GPTIMG = "${IMAGE_BASENAME}-${MACHINE}-gpt.img"
 BOOT_IMG = "${IMAGE_BASENAME}-${MACHINE}-boot.img"
@@ -24,19 +24,19 @@ TRUST_IMG = "trust.img"
 UBOOT_IMG = "u-boot.img"
 UBOOT_ITB = "u-boot.itb"
 
-GPTIMG_APPEND_px30 = "console=tty1 console=ttyS1,1500000n8 rw \
+GPTIMG_APPEND:px30 = "console=tty1 console=ttyS1,1500000n8 rw \
 	root=PARTUUID=b921b045-1d rootfstype=ext4 init=/sbin/init rootwait"
-GPTIMG_APPEND_rk3308 = "console=tty1 console=ttyFIQ0,1500000n8 rw \
+GPTIMG_APPEND:rk3308 = "console=tty1 console=ttyFIQ0,1500000n8 rw \
 	root=PARTUUID=b921b045-1d rootfstype=ext4 init=/sbin/init rootwait"
-GPTIMG_APPEND_rk3328 = "console=tty1 console=ttyS2,1500000n8 rw \
+GPTIMG_APPEND:rk3328 = "console=tty1 console=ttyS2,1500000n8 rw \
 	root=PARTUUID=b921b045-1d rootfstype=ext4 init=/sbin/init rootwait"
-GPTIMG_APPEND_rk3399 = "console=tty1 console=ttyFIQ0,1500000n8 rw \
+GPTIMG_APPEND:rk3399 = "console=tty1 console=ttyFIQ0,1500000n8 rw \
 	root=PARTUUID=b921b045-1d rootfstype=ext4 init=/sbin/init rootwait"
-GPTIMG_APPEND_rk3399pro = "console=tty1 console=ttyS2,1500000n8 rw \
+GPTIMG_APPEND:rk3399pro = "console=tty1 console=ttyS2,1500000n8 rw \
 	root=PARTUUID=b921b045-1d rootfstype=ext4 init=/sbin/init rootwait"
-GPTIMG_APPEND_rk3566 = "console=tty1 console=ttyFIQ0,1500000n8 rw \
+GPTIMG_APPEND:rk3566 = "console=tty1 console=ttyFIQ0,1500000n8 rw \
 	root=PARTUUID=b921b045-1d rootfstype=ext4 init=/sbin/init rootwait"
-GPTIMG_APPEND_rk3568 = "console=tty1 console=ttyFIQ0,1500000n8 rw \
+GPTIMG_APPEND:rk3568 = "console=tty1 console=ttyFIQ0,1500000n8 rw \
 	root=PARTUUID=b921b045-1d rootfstype=ext4 init=/sbin/init rootwait"
 
 # default partitions [in Sectors]
@@ -63,15 +63,15 @@ do_image_rockchip_radxa_gpt_img[depends] += " \
 	virtual/kernel:do_deploy \
 	virtual/bootloader:do_deploy"
 
-PER_CHIP_IMG_GENERATION_COMMAND_px30 = "generate_px30_loader_image"
-PER_CHIP_IMG_GENERATION_COMMAND_rk3308 = "generate_rk3308_loader_image"
-PER_CHIP_IMG_GENERATION_COMMAND_rk3328 = "generate_rk3328_loader_image"
-PER_CHIP_IMG_GENERATION_COMMAND_rk3399 = "generate_rk3399_loader_image"
-PER_CHIP_IMG_GENERATION_COMMAND_rk3399pro = "generate_rk3399pro_loader_image"
-PER_CHIP_IMG_GENERATION_COMMAND_rk3566 = "generate_rk3566_loader_image"
-PER_CHIP_IMG_GENERATION_COMMAND_rk3568 = "generate_rk3568_loader_image"
+PER_CHIP_IMG_GENERATION_COMMAND:px30 = "generate_px30_loader_image"
+PER_CHIP_IMG_GENERATION_COMMAND:rk3308 = "generate_rk3308_loader_image"
+PER_CHIP_IMG_GENERATION_COMMAND:rk3328 = "generate_rk3328_loader_image"
+PER_CHIP_IMG_GENERATION_COMMAND:rk3399 = "generate_rk3399_loader_image"
+PER_CHIP_IMG_GENERATION_COMMAND:rk3399pro = "generate_rk3399pro_loader_image"
+PER_CHIP_IMG_GENERATION_COMMAND:rk3566 = "generate_rk3566_loader_image"
+PER_CHIP_IMG_GENERATION_COMMAND:rk3568 = "generate_rk3568_loader_image"
 
-IMAGE_CMD_rockchip-radxa-gpt-img () {
+IMAGE_CMD:rockchip-radxa-gpt-img () {
 	# Change to image directory
 	cd ${DEPLOY_DIR_IMAGE}
 

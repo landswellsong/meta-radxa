@@ -14,7 +14,7 @@ SRC_URI[resize-helper-script] = "9e359c1cce25f89114befc48213f7ea8"
 
 inherit systemd
 
-RDEPENDS_${PN} += "e2fsprogs-resize2fs gptfdisk parted util-linux udev"
+RDEPENDS:${PN} += "e2fsprogs-resize2fs gptfdisk parted util-linux udev"
 
 do_install() {
 	install -d ${D}${systemd_system_unitdir}
@@ -23,4 +23,4 @@ do_install() {
 	install -m 0755 ${WORKDIR}/resize-helper ${D}${sbindir}
 }
 
-SYSTEMD_SERVICE_${PN} = "resize-helper.service"
+SYSTEMD_SERVICE:${PN} = "resize-helper.service"

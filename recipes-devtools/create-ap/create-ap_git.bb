@@ -13,7 +13,7 @@ S = "${WORKDIR}/git"
 
 inherit systemd
 
-RDEPENDS_${PN} += "bash util-linux procps hostapd iw dnsmasq"
+RDEPENDS:${PN} += "bash util-linux procps hostapd iw dnsmasq"
 
 do_install() {
 	install -d ${D}/${bindir}
@@ -35,11 +35,11 @@ do_install() {
 	install -m 0644 "${S}/README.md" ${D}/${docdir}/create_ap/README.md
 }
 
-FILES_${PN} += "\
+FILES:${PN} += "\
 	${datadir}/bash-completion/* \
 	"
 
-SYSTEMD_SERVICE_${PN} = "create_ap.service"
+SYSTEMD:SERVICE_${PN} = "create_ap.service"
 
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
