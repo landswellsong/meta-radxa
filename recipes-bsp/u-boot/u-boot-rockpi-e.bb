@@ -10,6 +10,8 @@ SRC_URI = " \
 	file://0001-Use-local-command.h-file-instead-of-system-file.patch \
 	file://${MACHINE}/boot.cmd \
 	file://${MACHINE}/uEnv.txt \
+	file://0004-extern-yyloc.patch \
+	file://0005-comment-bad-dts-targets.patch \
 "
 
 SRCREV = "7b93f1b8bce4106266d4a38dde96fd8080faccea"

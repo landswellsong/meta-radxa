@@ -12,6 +12,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 SRC_URI = " \
 	git://github.com/radxa/kernel.git;branch=stable-4.19-rock3; \
 	file://0001-arm64-dts-rockchip-radxa-cm3-io-enable-serial-consol.patch \
+	file://0004-extern-yyloc.patch \
 "
 
 SRCREV = "f0dc4a74f925ca01952c3031c1024bf9a581d65e"

@@ -10,6 +10,8 @@ SRC_URI = " \
 	file://0001-Use-local-command.h-file-instead-of-system-file.patch \
 	file://0001-Makefile-disable-gcc9-s-address-of-packed-member-war.patch \
 	file://0002-Suppress-maybe-uninitialized-warning.patch \
+	file://0004-extern-yyloc.patch \
+	file://0005-comment-bad-dts-targets.patch \
 	file://${MACHINE}/boot.cmd \
 	file://${MACHINE}/uEnv.txt \
 "

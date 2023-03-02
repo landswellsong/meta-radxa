@@ -9,6 +9,8 @@ LIC_FILES_CHKSUM = "file://Licenses/README;md5=a2c678cfd4a4d97135585cad908541c6"
 SRC_URI = " \
 	git://github.com/radxa/u-boot.git;branch=stable-4.19-rock3; \
 	file://0003_Fix-failed_to_create_atf.patch \
+	file://0004-extern-yyloc.patch \
+	file://0005-comment-bad-dts-targets.patch \
 "
 
 SRCREV = "${AUTOREV}"

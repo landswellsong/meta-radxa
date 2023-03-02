@@ -9,6 +9,7 @@ do_compile[depends] += "u-boot-mkimage-radxa-native:do_populate_sysroot"
 
 SRC_URI = " \
 	git://github.com/radxa/kernel.git;branch=stable-4.4-px30; \
+	file://0004-extern-yyloc.patch \
 	file://0002-Suppress-additional-warnings.patch \
 "
 

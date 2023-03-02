@@ -9,6 +9,7 @@ DEPENDS += "openssl-native"
 SRC_URI = " \
 	git://github.com/radxa/kernel.git;branch=release-4.4-rockpi4; \
 	file://0002-Suppress-additional-warnings.patch \
+	file://0004-extern-yyloc.patch \
 	file://brcmfmac.scc \
 "
 

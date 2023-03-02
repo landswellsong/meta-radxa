@@ -7,6 +7,7 @@ require recipes-kernel/linux/linux-yocto.inc
 
 SRC_URI = " \
 	git://github.com/radxa/kernel.git;branch=linux-5.10.y-radxa-zero; \
+	file://0004-extern-yyloc.patch \
 "
 
 SRCREV = "57a25a2f2f476f98a9a98115853b29f10b086f77"

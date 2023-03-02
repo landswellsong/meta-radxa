@@ -8,6 +8,7 @@ DEPENDS += "openssl-native u-boot-mkimage-radxa-native"
 SRC_URI = " \
 	git://github.com/radxa/kernel.git;branch=rk3399pro-toybrick-stable; \
 	file://0002-Suppress-additional-warnings.patch \
+	file://0004-extern-yyloc.patch \
 	file://brcmfmac.scc \
 "
 

@@ -13,6 +13,7 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 SRC_URI = " \
 	git://github.com/radxa/kernel.git;branch=stable-4.19-rock3; \
 	file://0003-enable-rock-3a-console-debug.patch\
+	file://0004-extern-yyloc.patch \
 "
 
 SRCREV = "${AUTOREV}"

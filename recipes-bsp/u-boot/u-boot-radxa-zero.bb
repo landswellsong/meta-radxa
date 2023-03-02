@@ -11,6 +11,8 @@ DEPENDS += "radxa-amlogic-fip-native"
 
 SRC_URI = " \
 	git://github.com/radxa/u-boot.git;branch=radxa-zero-v2021.07 \
+	file://0004-extern-yyloc.patch \
+	file://0005-comment-bad-dts-targets.patch \
 	file://${MACHINE}/boot.cmd \
 	file://${MACHINE}/uEnv.txt \
 "
